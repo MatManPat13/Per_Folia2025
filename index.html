@@ -51,7 +51,8 @@
 <div id="musica">
 <audio id="musicaFondo" src="https://github.com/molinariosvalentina6-droid/Per-Folia---2025-/blob/main/Assets/Kina.mp3?raw=true"> </audio>
 
-  <button id="musicaBtn" onclick="playSound()">Reproducir música de fondo</button>
+<button id="musicaBtn" class="icono-musica" onclick="playSound()">♪</button>
+
 
 
 </div>
@@ -93,7 +94,7 @@ h1, h2, h3, h4, h5, h6 {
 </section>
 
 
-  <section id="inicio" class="pantalla">
+  <section id="inicio2" class="pantalla">
     <button>Contacto</button>
     <h1 class="cartaTitulo">PER FOLIA</h1>
 <style>
@@ -109,7 +110,7 @@ font-size: 5em;
   }
 </style>
 
-    <button id="btnCuaderno">Abrir el cuaderno</button>
+    <button id="btnCuaderno2">Abrir el cuaderno</button>
     <br>
  </section>
 
@@ -664,17 +665,28 @@ top: 0;
   const inicio = document.getElementById("inicio");
   const cuaderno = document.getElementById("cuaderno");
   const btnCuaderno = document.getElementById("btnCuaderno");
-const btnVolver = document.getElementById("btnVolver");
-btnCuaderno.addEventListener("click", () => {
-inicio.classList.remove("active");
-cuaderno.classList.add("active");
-});
-if(btnVolver) {
-btnVolver.addEventListener("click", () => {
-cuaderno.classList.remove("active");
-inicio.classList.add("active");
-});
-}
+  const btnCuaderno2 = document.getElementById("btnCuaderno2");
+  const btnVolver = document.getElementById("btnVolver");
+
+  const abrirCuaderno = () => {
+    inicio.classList.remove("active");
+    cuaderno.classList.add("active");
+  };
+
+  if (btnCuaderno) {
+    btnCuaderno.addEventListener("click", abrirCuaderno);
+  }
+
+  if (btnCuaderno2) {
+    btnCuaderno2.addEventListener("click", abrirCuaderno);
+  }
+
+  if (btnVolver) {
+    btnVolver.addEventListener("click", () => {
+      cuaderno.classList.remove("active");
+      inicio.classList.add("active");
+    });
+  }
 </script>
 <!-- SCRIPT PARA ANIMACIÓN DE TEXTOS -->
 <script>
@@ -820,8 +832,10 @@ function playSound() {
     audio.pause();
   }
 }
-<!-- SCRIPT PARA ANIMAR TEXTOS DE VENTANAS EMERGENTES -->
+</script>
+
 <script>
+// SCRIPT PARA ANIMAR TEXTOS DE VENTANAS EMERGENTES
 document.addEventListener('DOMContentLoaded', function() {
   // Función para preparar animación (reutilizada)
   function prepararAnimacionVentana(elemento) {
@@ -893,7 +907,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
-</script>
 </script>
 
 </body>
