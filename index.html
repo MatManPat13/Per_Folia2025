@@ -828,8 +828,11 @@ function playSound() {
   let audio = document.getElementById("musicaFondo");
   if(audio.paused) {
     audio.play();
+      this.textContent = "Pausar";
   } else {
     audio.pause();
+      this.textContent = "Reproducir";
+
   }
 }
 </script>
